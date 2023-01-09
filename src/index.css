@@ -2,8 +2,7 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
-    font: inherit;
+    /* font: inherit; */
 }
 body{
     font-size: 20px;
@@ -25,29 +24,32 @@ body{
     background-color: #0f2b3d;
     color: white;
     text-align: center;
-    font-size: 1.3em;
+    /* font-size: 1.3em; */
     padding: 10px;
 }
 #footer {
     grid-area: footer;
     background-color: #0f2b3d;
+    border-top: white 2px solid;
+    display: none;
 }
 #sidebar {
     grid-area: sidebar;
     background-color: #0f2b3d;
+    border-bottom: red 2px solid;
 }
-#title{
+#sidebar .title{
     Padding: 10px;
-    background-color: #178991;
     text-align: center;
     font-size: 1.5em;
 }
 #customers-list{
     overflow-y: scroll;
-    padding: 10px;
+    height: 100%;
 }
 #customer-details {
     grid-area: details;
+    background-image: url('../public/background-2.jpg');
     background-color: #f8f8f8;
     background-repeat: no-repeat;
     background-size: contain;
@@ -55,12 +57,21 @@ body{
     padding: 10px;
     height: 100%;
 }
-.welcome-Background{
-    background-image: url('../public/background.jpg');
-    
+#sidebar .name{
+    padding: 15px;
+    text-overflow: ellipsis;
+    border-top: 2px black solid;
 }
-.customer-view-background {
-    background-image: url('../public/background-2.jpg');
+#sidebar .name:hover, #sidebar .selected{
+    cursor: pointer;
+    background-color: #178991;
+}
+
+#sidebar p{
+    text-transform: capitalize;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .success {
@@ -80,13 +91,13 @@ body{
 @media (min-width : 600px){
     #root {
         grid-template-columns: 30% 70%;
-        grid-template-rows: 75px 400px 100px;
+        grid-template-rows: 75px 550px 100px;
         grid-template-areas:
             "header header"
             "sidebar details"
             "footer footer";
     }
     #header{
-        font-size: 2.5em;
+        /* font-size: 2.5em; */
     }
 }

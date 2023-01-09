@@ -1,8 +1,8 @@
 
-const  CustomerDetails = ({welcome}) => {
+const  CustomerDetails = () => {
     return (
-        <div id="customer-details" className = {welcome? "welcome-Background" : "customer-view-background"}>
-            
+        <div id="customer-details">
+            <h1>customer</h1>
         </div>
     )
 }
