@@ -1,0 +1,19 @@
+{
+  "persons": [
+    {
+      "name": "Mary Poppendieck",
+      "number": "39-23-6423122",
+      "id": 4
+    },
+    {
+      "name": "Amsterdam",
+      "number": "39-44-5323529",
+      "id": 5
+    },
+    {
+      "name": "Verdiane",
+      "number": "39-44-5323577",
+      "id": 6
+    }
+  ]
+}
