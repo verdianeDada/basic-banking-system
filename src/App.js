@@ -5,6 +5,7 @@ import SideBar from './components/SideBar'
 import CustomerDetails from './components/CustomerDetails'
 
 
+
 const App = () => {
   const [customers, setCustomers] = useState(
     [

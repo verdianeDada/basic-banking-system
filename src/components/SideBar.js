@@ -1,7 +1,7 @@
 const  SideBar= ({customers, setSelectedCustomer, selectedCustomer }) => {
     return (
         <div id="sidebar">
-            <p className="title" style={{paddingTop:45}}> Customers List</p>
+            <div className="title"><h2  > Customers' List</h2></div>
             <div id="customers-list">
                 {customers.map( customer =>
                      <div key={customer.id.toString()} className={customer.id===selectedCustomer.id ? "name selected":"name"} 
