@@ -1,9 +1,10 @@
-a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, s, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
     margin: 0;
     padding: 0;
     border: 0;
     /* font: inherit; */
 }
+
 body{
     font-size: 20px;
     color: #fff;
@@ -15,7 +16,7 @@ body{
     grid-template-areas:
         "header"
         "sidebar"
-        "details"
+        "s"
         "footer";   
 }
 
@@ -36,7 +37,7 @@ body{
 #sidebar {
     grid-area: sidebar;
     background-color: #0f2b3d;
-    border-bottom: red 2px solid;
+    border: red 2px solid;
 }
 #sidebar .title{
     Padding: 10px;
@@ -46,16 +47,29 @@ body{
 #customers-list{
     overflow-y: scroll;
     height: 100%;
+    scrollbar-color: red yellow;
 }
 #customer-details {
-    grid-area: details;
-    background-image: url('../public/background-2.jpg');
-    background-color: #f8f8f8;
+    grid-area: s;
+    /* background-image: url('../public/background-2.jpg'); */
+    /* background-color: #f8f8f8;
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: center;
+    background-position: center; */
+    background-color: rgb(231, 223, 223);
     padding: 10px;
     height: 100%;
+    color: black;
+}
+#customer-details strong{
+    text-transform: capitalize;
+    size: 1.3em
+}
+#customer-details input {
+    text-transform: capitalize;
+}
+.customer-info{
+
 }
 #sidebar .name{
     padding: 15px;
@@ -88,13 +102,13 @@ body{
     font-size: 20px;
     margin: 10px 0;
 }
-@media (min-width : 600px){
+@media (min-width : 730px){
     #root {
         grid-template-columns: 30% 70%;
         grid-template-rows: 75px 550px 100px;
         grid-template-areas:
             "header header"
-            "sidebar details"
+            "sidebar s"
             "footer footer";
     }
     #header{
