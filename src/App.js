@@ -108,11 +108,26 @@ const App = () => {
     ]
   )
 
-  useEffect(() => {
-    // setting the selected customer whose details should be viewed
+  // loading data from Atlas MongoDb
+//   useEffect(() => {
+//     const url = `mongodb+srv://atlas:${password}@cluster0.chdfxaq.mongodb.net/?retryWrites=true&w=majority`
+// mongoose
+//     .connect(url)
+//     .then(result => {
+//         console.log('Connected')
+//         return person.save()
+//     })
+//     .then(() => {
+//         console.log('note saved')
+//         return mongoose.connection.close()
+//     })
+//     .catch(error => console.log(error)
+//     )
+//   }, [])
+  
+  // setting the selected customer whose details should be viewed
 
     // console.log(selected)
-  }, [])
   let selected = customers.length > 0 ? customers[0] : { id: -1 }
   const [selectedCustomer, setSelectedCustomer] = useState(selected)
   const [receiverId, setReceiverId] = useState()
@@ -122,30 +137,31 @@ const App = () => {
     e.preventDefault()
     const receiver = customers.find(c => c.id === receiverId)
     console.log(receiverId)
+    if (window.confirm(`Do you want to transfer $ ${amount} to ${receiver.firstName} ${receiver.lastName} ?`)) {
 
+      if (receiver) {
+        console.log(`lets tranfer ${amount} to ${receiver.firstName}`)
+        const newSenderBalance = selectedCustomer.currentBalance - amount
+        const newReceiverBalance = receiver.currentBalance + amount
+        setCustomers(customers.map(customer => {
+          // selectedCustomer = sender
 
-    if (receiver) {
-      console.log(`lets tranfer ${amount} to ${receiver.firstName}`)
-      const newSenderBalance = selectedCustomer.currentBalance - amount
-      const newReceiverBalance = receiver.currentBalance + amount
-      setCustomers(customers.map(customer => {
-        // selectedCustomer = sender
+          if (customer.id === receiverId) {
 
-        if (customer.id === receiverId) {
-
-          return { ...customer, currentBalance: newReceiverBalance }
-        }
-        else if (customer.id === selectedCustomer.id)
-          return { ...customer, currentBalance: newSenderBalance }
-        else
-          return customer
-      }))
-      setSelectedCustomer({ ...selectedCustomer, currentBalance: newSenderBalance })
-      // setReceiverId()
-      alert(`Successful transfer of ${amount} to ${receiver.firstName} ${receiver.lastName}`) 
+            return { ...customer, currentBalance: newReceiverBalance }
+          }
+          else if (customer.id === selectedCustomer.id)
+            return { ...customer, currentBalance: newSenderBalance }
+          else
+            return customer
+        }))
+        setSelectedCustomer({ ...selectedCustomer, currentBalance: newSenderBalance })
+        // setReceiverId()
+        alert(`Successful transfer of ${amount} to ${receiver.firstName} ${receiver.lastName}`)
+      }
+      else
+        alert("Operation failed! This receiver is not longer a customer of this bank")
     }
-    else
-      alert("Operation failed! This receiver is not longer a customer of this bank")
   }
   return (
     <>
