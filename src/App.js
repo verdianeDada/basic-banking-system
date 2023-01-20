@@ -11,7 +11,7 @@ const App = () => {
     [
       {
         id: 1,
-        firstName: "Krish",
+        firstName: "s",
         lastName: "Lee",
         phone: 11111111,
         email: "krish.lee@gmail.com",
