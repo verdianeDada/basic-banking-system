@@ -3,135 +3,41 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import SideBar from './components/SideBar'
 import CustomerDetails from './components/CustomerDetails'
-
+import axios from 'axios'
 
 
 const App = () => {
-  const [customers, setCustomers] = useState(
-    [
-      {
-        id: 1,
-        firstName: "s",
-        lastName: "Lee",
-        phone: 11111111,
-        email: "krish.lee@gmail.com",
-        currentBalance: 200000
-      },
-      {
-        id: 2,
-        firstName: "racks",
-        lastName: "jacson",
-        phone: 2222222,
-        email: "racks.jacson@gmail.com",
-        currentBalance: 200000
-      },
-      {
-        id: 3,
-        firstName: "denial",
-        lastName: "roast",
-        phone: 33333333,
-        email: "denial.roast@gmail.com",
-        currentBalance: 200000
-      },
-      {
-        id: 4,
-        firstName: "devid",
-        lastName: "neo",
-        phone: 44444444,
-        email: "devid.neo@gmail.com",
-        currentBalance: 200000
-      },
-      {
-        id: 5,
-        firstName: "jone",
-        lastName: "mac",
-        phone: 55555555,
-        email: "jone.mac@gmail.com",
-        currentBalance: 200000
-      },
-      {
-        id: 6,
-        firstName: "verdiane",
-        lastName: "dada",
-        phone: 66666666,
-        email: "dada.verdiane@gmail.com",
-        currentBalance: 200000
-      },
-      {
-        id: 7,
-        firstName: "Krish",
-        lastName: "Lee",
-        phone: 11111111,
-        email: "krish.lee@gmail.com",
-        currentBalance: 200000
-      },
-      {
-        id: 8,
-        firstName: "racks",
-        lastName: "jacson",
-        phone: 2222222,
-        email: "racks.jacson@gmail.com",
-        currentBalance: 200000
-      },
-      {
-        id: 9,
-        firstName: "denial",
-        lastName: "roast",
-        phone: 33333333,
-        email: "denial.roast@gmail.com",
-        currentBalance: 200000
-      },
-      {
-        id: 10,
-        firstName: "devid",
-        lastName: "neo",
-        phone: 44444444,
-        email: "devid.neo@gmail.com",
-        currentBalance: 200000
-      },
-      {
-        id: 11,
-        firstName: "jone",
-        lastName: "mac",
-        phone: 55555555,
-        email: "jone.mac@gmail.com",
-        currentBalance: 200000
-      },
-      {
-        id: 12,
-        firstName: "verdiane",
-        lastName: "dada",
-        phone: 66666666,
-        email: "dada.verdiane@gmail.com",
-        currentBalance: 200000
-      }
-    ]
-  )
 
-  // loading data from Atlas MongoDb
-//   useEffect(() => {
-//     const url = `mongodb+srv://atlas:${password}@cluster0.chdfxaq.mongodb.net/?retryWrites=true&w=majority`
-// mongoose
-//     .connect(url)
-//     .then(result => {
-//         console.log('Connected')
-//         return person.save()
-//     })
-//     .then(() => {
-//         console.log('note saved')
-//         return mongoose.connection.close()
-//     })
-//     .catch(error => console.log(error)
-//     )
-//   }, [])
-  
-  // setting the selected customer whose details should be viewed
 
-    // console.log(selected)
-  let selected = customers.length > 0 ? customers[0] : { id: -1 }
-  const [selectedCustomer, setSelectedCustomer] = useState(selected)
+
+  const [customers, setCustomers] = useState([])
+
+
+
+  const [selectedCustomer, setSelectedCustomer] = useState({})
   const [receiverId, setReceiverId] = useState()
   const [amount, setAmount] = useState(100)
+
+  // loading data from AWS API Gateway
+  useEffect(() => {
+    const api_url = "https://wkequqyb56.execute-api.us-east-1.amazonaws.com/dev"
+    console.log(`${api_url}/customers`)
+    axios
+      .get(`${api_url}/customers`)
+      .then(data => {
+        
+        
+        const customers = data.data.customers
+        setCustomers(customers)
+        console.log('customers set')
+        // setting the selected customer whose details should be viewed by default
+        let selected = customers.length > 0 ? customers[0] : { id: -1 }
+        setSelectedCustomer(selected)
+      })
+      .catch(err => console.log(err)
+      )
+
+  }, [])
 
   const transfer = (e) => {
     e.preventDefault()
