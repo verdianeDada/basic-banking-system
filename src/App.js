@@ -7,13 +7,7 @@ import axios from 'axios'
 
 
 const App = () => {
-
-
-
   const [customers, setCustomers] = useState([])
-
-
-
   const [selectedCustomer, setSelectedCustomer] = useState({})
   const [receiverId, setReceiverId] = useState()
   const [amount, setAmount] = useState(100)
@@ -48,7 +42,7 @@ const App = () => {
       if (receiver) {
         console.log(`lets tranfer ${amount} to ${receiver.firstName}`)
         const newSenderBalance = selectedCustomer.currentBalance - amount
-        const newReceiverBalance = receiver.currentBalance + amount
+        const newReceiverBalance = parseInt(receiver.currentBalance) + parseInt(amount)
         setCustomers(customers.map(customer => {
           // selectedCustomer = sender
 
