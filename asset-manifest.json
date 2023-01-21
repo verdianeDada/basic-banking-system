@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/verdianeDada.github.io/basic-bank-app/static/css/main.0a4e8507.chunk.css",
-    "main.js": "/verdianeDada.github.io/basic-bank-app/static/js/main.5ee44a8d.chunk.js",
-    "main.js.map": "/verdianeDada.github.io/basic-bank-app/static/js/main.5ee44a8d.chunk.js.map",
-    "runtime-main.js": "/verdianeDada.github.io/basic-bank-app/static/js/runtime-main.31fa3cfc.js",
-    "runtime-main.js.map": "/verdianeDada.github.io/basic-bank-app/static/js/runtime-main.31fa3cfc.js.map",
-    "static/js/2.0425e8bf.chunk.js": "/verdianeDada.github.io/basic-bank-app/static/js/2.0425e8bf.chunk.js",
-    "static/js/2.0425e8bf.chunk.js.map": "/verdianeDada.github.io/basic-bank-app/static/js/2.0425e8bf.chunk.js.map",
-    "index.html": "/verdianeDada.github.io/basic-bank-app/index.html",
-    "static/css/main.0a4e8507.chunk.css.map": "/verdianeDada.github.io/basic-bank-app/static/css/main.0a4e8507.chunk.css.map",
-    "static/js/2.0425e8bf.chunk.js.LICENSE.txt": "/verdianeDada.github.io/basic-bank-app/static/js/2.0425e8bf.chunk.js.LICENSE.txt"
+    "main.css": "/basic-banking-system/static/css/main.0a4e8507.chunk.css",
+    "main.js": "/basic-banking-system/static/js/main.5ee44a8d.chunk.js",
+    "main.js.map": "/basic-banking-system/static/js/main.5ee44a8d.chunk.js.map",
+    "runtime-main.js": "/basic-banking-system/static/js/runtime-main.74831d75.js",
+    "runtime-main.js.map": "/basic-banking-system/static/js/runtime-main.74831d75.js.map",
+    "static/js/2.945188e8.chunk.js": "/basic-banking-system/static/js/2.945188e8.chunk.js",
+    "static/js/2.945188e8.chunk.js.map": "/basic-banking-system/static/js/2.945188e8.chunk.js.map",
+    "index.html": "/basic-banking-system/index.html",
+    "static/css/main.0a4e8507.chunk.css.map": "/basic-banking-system/static/css/main.0a4e8507.chunk.css.map",
+    "static/js/2.945188e8.chunk.js.LICENSE.txt": "/basic-banking-system/static/js/2.945188e8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.31fa3cfc.js",
-    "static/js/2.0425e8bf.chunk.js",
+    "static/js/runtime-main.74831d75.js",
+    "static/js/2.945188e8.chunk.js",
     "static/css/main.0a4e8507.chunk.css",
     "static/js/main.5ee44a8d.chunk.js"
   ]
