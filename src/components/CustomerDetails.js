@@ -37,7 +37,7 @@ const CustomerDetails = ({ selectedCustomer, customers, transfer, amount, setAmo
                                     </div>
                                     <div>
                                         <label htmlFor="amount">Amount ($):</label>
-                                        <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} id="amount" step="50" />
+                                        <input type="number"max={selectedCustomer.currentBalance} value={amount} onChange={(e) => setAmount(e.target.value)} id="amount" step="50" />
                                     </div></div>
                                 <div id="submit">
                                     <button type="submit">Transfer</button>
