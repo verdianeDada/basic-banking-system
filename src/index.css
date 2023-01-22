@@ -8,7 +8,7 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     --second-color: #178991;
   }
 body{
-    font-family: cursive, sans-serif, serif;
+    font-family: sans-serif, serif;
     font-size: 19px;
     color: #fff;    
 }
