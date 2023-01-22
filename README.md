@@ -1,12 +1,14 @@
 # Basic Banking Web application, Reponsive, AJAX application
 
+## Description
+This is a responsive basic bank system application that I've design and developped in the fulfillment of the enternship at The Spark Foundation.
+
+Hosted Application link:  https://verdianedada.github.io/basic-banking-system
 
 <div align="center">
-https://user-images.githubusercontent.com/35493201/210452061-1fcea833-5a27-4bfb-a10b-04a16a473d2f.mp4
+https://user-images.githubusercontent.com/35493201/213917451-603b9623-a80f-4713-9698-4cf6ca869fed.mp4
 </div>
 
-## Description
-This is a basic bank system application that I've programed in the fulfillment of the enternship at The Spark Foundation.
 
 ## Task Specifications
 
