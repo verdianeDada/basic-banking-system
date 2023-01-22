@@ -17,7 +17,7 @@ https://user-images.githubusercontent.com/35493201/213917451-603b9623-a80f-4713-
 ## Task Specifications
 
 <p align="center">
-  <img  width="50%" alt="Demo Image" src="https://github.com/verdianeDada/basic-banking-system/blob/main/Task.png">
+  <img  width="90%" alt="Demo Image" src="https://github.com/verdianeDada/basic-banking-system/blob/main/Task.png">
 </p>
 
 
